@@ -1,0 +1,31 @@
+<h1>Listing entries</h1>
+
+<table>
+  <tr>
+    <th>User uid</th>
+    <th>Ticket number</th>
+    <th>Video</th>
+    <th>Playback url</th>
+    <th>Thumbnail url</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @entries.each do |entry| %>
+  <tr>
+    <td><%= entry.user_uid %></td>
+    <td><%= entry.ticket_number %></td>
+    <td><%= entry.video_id %></td>
+    <td><%= entry.playback_url %></td>
+    <td><%= entry.thumbnail_url %></td>
+    <td><%= link_to 'Show', entry %></td>
+    <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
+    <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Entry', new_entry_path %>

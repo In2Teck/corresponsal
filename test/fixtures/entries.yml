@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  user_uid: MyString
+  ticket_number: MyString
+  video_id: MyString
+  playback_url: MyString
+  thumbnail_url: MyString
+
+two:
+  user_uid: MyString
+  ticket_number: MyString
+  video_id: MyString
+  playback_url: MyString
+  thumbnail_url: MyString

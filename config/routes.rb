@@ -1,4 +1,7 @@
 Corresponsal::Application.routes.draw do
+  resources :entries
+
+
   resources :roles
 
   devise_for :users, :controllers => {:omniauth_callbacks => "users/omniauth_callbacks"}

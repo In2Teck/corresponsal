@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User uid:</b>
+  <%= @entry.user_uid %>
+</p>
+
+<p>
+  <b>Ticket number:</b>
+  <%= @entry.ticket_number %>
+</p>
+
+<p>
+  <b>Video:</b>
+  <%= @entry.video_id %>
+</p>
+
+<p>
+  <b>Playback url:</b>
+  <%= @entry.playback_url %>
+</p>
+
+<p>
+  <b>Thumbnail url:</b>
+  <%= @entry.thumbnail_url %>
+</p>
+
+
+<%= link_to 'Edit', edit_entry_path(@entry) %> |
+<%= link_to 'Back', entries_path %>
