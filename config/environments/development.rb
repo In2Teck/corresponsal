@@ -1,6 +1,6 @@
 Corresponsal::Application.configure do
-  ENV['FACEBOOK_APP_KEY'] = "FACEBOOK APP KEY"
-  ENV['FACEBOOK_APP_SECRET'] = "FACEBOOK APP SECRET"
+  ENV['FACEBOOK_APP_KEY'] = "430024737107497"
+  ENV['FACEBOOK_APP_SECRET'] = "7161c719ea31a95f8b901c5484777122"
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on

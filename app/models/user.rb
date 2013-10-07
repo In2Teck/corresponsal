@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   attr_accessible :uid, :first_name, :last_name, :roles
 
   has_and_belongs_to_many :roles
+  has_many :entries, :primary_key => :uid, :foreign_key => :user_uid
 
   validates_presence_of :email, :password
 
