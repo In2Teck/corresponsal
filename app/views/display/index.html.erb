@@ -1,0 +1,19 @@
+<% content_for :head_style do %>
+  <%= stylesheet_link_tag "index" %>
+<% end %>
+<% content_for :head_script do %>
+  <%= javascript_include_tag "index" %>
+<% end %>
+<div id="fb-root"></div>
+<section id="section-fan">
+  <div id="ruby-values" data-signed-request="<%= @signed_request %>" data-is-fan="<%= @is_fan%>">
+    <div class="participar-btn">
+      QUIERO PARTICIPAR
+    </div>
+  </div>
+</section>
+
+<section id="section-no-fan">
+  <div> DA CLICK EN "ME GUSTA" </div><br/>
+</section>
+

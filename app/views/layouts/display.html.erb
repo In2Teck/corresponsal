@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Corresponsal Tradicional</title>
+  <meta charset="utf-8" />
+  <%= stylesheet_link_tag "display", :media => "all" %>
+  <%= yield :head_style %>
+  <%= javascript_include_tag "application", "facebook" %>
+  <%= yield :head_script %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= yield %>
+<div id="ruby-session" data-session="<%= current_user ? true : false %>"></div>
+</body>
+</html>
