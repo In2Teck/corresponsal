@@ -1,4 +1,5 @@
 Corresponsal::Application.routes.draw do
+  
   resources :entries
 
   resources :roles
@@ -13,6 +14,11 @@ Corresponsal::Application.routes.draw do
 
   resources :users
 
+  match 'new_entry' => 'display#new_entry', :as => :new_entry
+
+  match 'get_ready' => 'display#get_ready', :as => :get_ready
+
+  match 'record_entry/:entry_id' => 'display#record_entry', :as => :record_entry
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

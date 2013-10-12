@@ -6,14 +6,17 @@
 <% end %>
 <div id="fb-root"></div>
 <section id="section-fan">
-  <div id="ruby-values" data-signed-request="<%= @signed_request %>" data-is-fan="<%= @is_fan%>">
-    <div class="participar-btn">
-      QUIERO PARTICIPAR
-    </div>
-  </div>
+  <figure>
+    <div>VIDEO</div>
+    <figcaption>
+      <%= button_tag "PARTICIPA", :id => "participar-btn" %>
+    </figcaption>
+  </figure>
+
 </section>
 
 <section id="section-no-fan">
   <div> DA CLICK EN "ME GUSTA" </div><br/>
 </section>
 
+<div id="ruby-values" data-signed-request="<%= @signed_request %>" data-is-fan="<%= @is_fan%>">

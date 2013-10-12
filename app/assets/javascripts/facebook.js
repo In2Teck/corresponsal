@@ -40,6 +40,32 @@ function loadFB() {
       cookie     : true, // set sessions cookies to allow your server to access the session?
       xfbml      : true  // parse XFBML tags on this page?
     });
+  
+    FB.getLoginStatus(function(response) {
+      if (response.status === 'connected') {
+        if ($('#ruby-session').data("session")) {
+          $(document).trigger('fbLoaded');
+        }
+        else {
+          $.ajax({
+            beforeSend: function( xhr ) {
+              var token = $('meta[name="csrf-token"]').attr('content');
+              if (token) xhr.setRequestHeader('X-CSRF-Token', token);
+            }, 
+            type: "GET",
+            url: "/users/auth/facebook/callback?signed_request=" + $('#ruby-values').data("signed-request"),
+            success: function(data, textStatus, jqXHR) {
+              $(document).trigger('fbLoaded');   
+            },
+            error: function() {
+            } 
+          });
+        }
+      }
+      else {
+        $(document).trigger('loginReq');
+      } 
+    });
   };
 
   // Load the SDK's source Asynchronously
@@ -55,36 +81,6 @@ function loadFB() {
    }(document, /*debug*/ false));
 }
 
-function checkFB() {
-  FB.getLoginStatus(function(response) {
-    if (response.status === 'connected') {
-      if ($('#ruby-session').data("session")) {
-        $(document).trigger('fbLoaded');
-      }
-      else {
-        $.ajax({
-          beforeSend: function( xhr ) {
-            var token = $('meta[name="csrf-token"]').attr('content');
-            if (token) xhr.setRequestHeader('X-CSRF-Token', token);
-          }, 
-          type: "GET",
-          url: "/users/auth/facebook/callback?signed_request=" + $('#ruby-values').data("signed-request"),
-          success: function(data, textStatus, jqXHR) {
-            $(document).trigger('fbLoaded');   
-          },
-          error: function() {
-          } 
-        });
-        //window.location.href = '/users/auth/facebook/callback?signed_request=' + $('#ruby-values').data("signed-request");
-      }
-    } else if (response.status === 'not_authorized') {
-      login();
-    } else {
-      login();
-    }
-   });
-}
-
 function login() {
  FB.login(function(response) {
     if (response.authResponse) {
@@ -92,7 +88,7 @@ function login() {
         type: "GET",
         url: "/users/auth/facebook/callback?signed_request=" + response.authResponse.signedRequest,
         success: function(data, textStatus, jqXHR) {
-          $(document).trigger('updateData', data);   
+          $(document).trigger('fbLoaded');   
         },
         error: function() {
         } 
@@ -111,7 +107,7 @@ function askExtraPermissions() {
         type: "GET",
         url: "/users/auth/facebook/callback?signed_request=" + response.authResponse.signedRequest,
         success: function(data, textStatus, jqXHR) {
-          $(document).trigger('updateData', data);   
+          //$(document).trigger('publishGranted', data);   
         },
         error: function() {
         } 

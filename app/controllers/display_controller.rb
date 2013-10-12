@@ -1,6 +1,6 @@
 class DisplayController < ApplicationController
 	
-	authorize_resource :class => false
+	#authorize_resource :class => false
 
   def index
     @signed_request = params[:signed_request]
@@ -8,6 +8,20 @@ class DisplayController < ApplicationController
     @is_fan = current_user.is_fan if @signed_request.blank? && current_user != nil
 	end
 
+  def new_entry
+    @entry = Entry.new
+    render :partial => 'new_entry', :content_type => 'text/html'
+  end
+
+  def get_ready
+    render :partial => 'get_ready', :content_type => 'text/html'
+  end
+
+  def record_entry
+    @entry_id = params[:entry_id]
+    @hash = ""
+    render :partial => 'record_entry', :content_type => 'text/html'
+  end
 
 	def decode_data str
     encoded_sig, payload = str.split('.')

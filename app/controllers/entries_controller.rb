@@ -44,13 +44,14 @@ class EntriesController < ApplicationController
 
     respond_to do |format|
       if @entry.save
-        format.html { redirect_to @entry, notice: 'Entry was successfully created.' }
         format.json { render json: @entry, status: :created, location: @entry }
       else
-        format.html { render action: "new" }
         format.json { render json: @entry.errors, status: :unprocessable_entity }
       end
     end
+    # respond_to do |format|
+    #   format.json { render json: {:prueba => "prueba"}}
+    # end
   end
 
   # PUT /entries/1
@@ -80,4 +81,5 @@ class EntriesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 end

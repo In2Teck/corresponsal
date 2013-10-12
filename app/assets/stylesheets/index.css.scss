@@ -1,0 +1,45 @@
+html {
+  color: black;
+  height: 100%;
+  width: 804px;
+  max-width: 804px;
+}
+
+#grabar-btn {
+  background: #FF0000;
+  border: 1px solid black;
+  border-radius: 0.3;
+  cursor: pointer;
+  height: 40px;
+  width: 120px;
+}
+
+#participar-btn {
+  background: #FF0000;
+  border: 1px solid black;
+  border-radius: 0.3;
+  cursor: pointer;
+  height: 40px;
+  width: 120px;
+}
+
+#section-fan {
+  display: none;
+}
+
+#section-no-fan {
+  /*font-size: 2.5em;
+  height: auto;
+  padding-left: 40px;
+  text-align: left;
+  width: auto;*/
+}
+
+#ticket-btn {
+  background: #FF0000;
+  border: 1px solid black;
+  border-radius: 0.3;
+  cursor: pointer;
+  height: 40px;
+  width: 120px;
+}

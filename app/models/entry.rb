@@ -4,4 +4,6 @@ class Entry < ActiveRecord::Base
 
   attr_accessible :playback_url, :thumbnail_url, :ticket_number, :user_uid, :video_id
 
+	validates_uniqueness_of :ticket_number
+
 end

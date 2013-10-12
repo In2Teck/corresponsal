@@ -10,6 +10,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<header>
+		<h2>Corresponsal Tradicional</h2>
+  	<!--%= image_tag "web/patrocinado.png", :alt => "Patrocinado por Tequila Centenario", :id => "header-centenario"%-->
+	</header>
 <%= yield %>
 <div id="ruby-session" data-session="<%= current_user ? true : false %>"></div>
 </body>
