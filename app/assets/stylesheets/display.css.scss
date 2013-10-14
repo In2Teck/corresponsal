@@ -1,3 +1,13 @@
-// Place all the styles related to the display controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+html {
+	background: url("fondo.png");
+  color: black;
+  height: 1000px;
+  width: 804px;
+  max-width: 804px;
+}
+
+body {
+	overflow: hidden;
+}
+
+textarea, input { outline: none; }

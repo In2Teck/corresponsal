@@ -40,6 +40,12 @@ function loadFB() {
       cookie     : true, // set sessions cookies to allow your server to access the session?
       xfbml      : true  // parse XFBML tags on this page?
     });
+
+    FB.Canvas.setAutoGrow(true);
+    /*FB.Canvas.setSize({height:1000});
+    setTimeout(function(){
+        FB.Canvas.setAutoGrow(true);
+    }, 100)*/
   
     FB.getLoginStatus(function(response) {
       if (response.status === 'connected') {

@@ -35,7 +35,7 @@ function onParticipar() {
     url: "/new_entry",
     data_type: "html",
     success: function(data, textStatus, jqXHR) {
-      $("#section-fan").fadeOut(function() {
+      $("#section-fan-content").fadeOut(function() {
           $(this).html(data).slideDown();
           $("#entry-form").bind("ajax:success", onNewEntry);
           $("#entry-form").bind("ajax:error", onNewEntryError);
@@ -55,7 +55,7 @@ function onNewEntry(event, data, status, xhr) {
     url: "/get_ready",
     data_type: "html",
     success: function(data, textStatus, jqXHR) {
-      $("#section-fan").fadeOut(function() {
+      $("#section-fan-content").fadeOut(function() {
           $(this).html(data).slideDown();
         });   
     },
@@ -86,20 +86,9 @@ function recordEntry() {
 }
 
 function initMailVU() {
-  var timestamp = Math.round(new Date().getTime() / 1000);
-  var hashcode = "";
+  var timestamp = $("#entry-values").data("timestamp");
+  var hashcode = $("#entry-values").data("hash");
   var apiURL = "http://apitest.mailvu.com/api/v1/message?api-key=JOSECUERVO&action=RECORD_MSG&request-id=" + entry.id + "&user-id=josecuervo&timestamp=" + timestamp + "&hash=" + hashcode;
-   /*$.ajax({
-    type: "GET",
-    url: "http://apitest.mailvu.com/api/v1/message"+
-    data_type: "html",
-    success: function(data, textStatus, jqXHR) {
-      $("#section-fan").fadeOut(function() {
-          $(this).html(data).slideDown();
-          initMailVU();
-        });   
-    },
-    error: function() {
-    } 
-  });*/
+  console.log(apiURL);
+  $("#mailvu-widget").attr('src', apiURL);
 }

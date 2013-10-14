@@ -1,45 +1,150 @@
-html {
-  color: black;
+#grabar-btn {
+  background: transparent url("grabar_btn.png");
+  border: none;
+  cursor: pointer;
   height: 100%;
-  width: 804px;
-  max-width: 804px;
+  width: 100%;
 }
 
-#grabar-btn {
-  background: #FF0000;
-  border: 1px solid black;
-  border-radius: 0.3;
-  cursor: pointer;
-  height: 40px;
-  width: 120px;
+#grabar-btn:hover {
+  background-image: url("grabar_btn_on.png");
 }
 
 #participar-btn {
-  background: #FF0000;
-  border: 1px solid black;
-  border-radius: 0.3;
+  background: transparent url("participa_btn.png");
+  border: none;
   cursor: pointer;
-  height: 40px;
-  width: 120px;
+  height: 100%;
+  width: 100%;
+}
+
+#participar-btn:hover {
+  background-image: url("participa_btn_on.png");
 }
 
 #section-fan {
   display: none;
+  height: 100%;
+  margin-top: 320px;
+  width: 100%;
+}
+
+#section-fan-content{
+  margin: auto;
+  width: 100%;
+}
+
+#section-fan-header {
+  background: url("conviertete.png");
+  height: 248px;
+  margin: auto;
+  width: 454px;
 }
 
 #section-no-fan {
-  /*font-size: 2.5em;
-  height: auto;
-  padding-left: 40px;
-  text-align: left;
-  width: auto;*/
+  height: 100%;
+  margin-top: 320px;
+  width: 100%;
 }
 
 #ticket-btn {
-  background: #FF0000;
-  border: 1px solid black;
-  border-radius: 0.3;
+  background: transparent url("continuar_btn.png");
+  border: none;
   cursor: pointer;
-  height: 40px;
-  width: 120px;
+  height: 100%;
+  width: 100%;
+}
+
+#ticket-btn:hover {
+  background-image: url("continuar_btn_on.png");
+}
+
+.content {
+  height: auto;
+  margin: auto;
+  width: 430px;
+}
+
+.content-establecimientos {
+  height: auto;
+  margin: 30px auto 0 auto;
+  width: 90%;
+}
+
+.content-establecimientos div{
+  display: inline-block;
+  vertical-align: top;
+}
+
+.content-ticket {
+  height: auto;
+  margin: auto;
+  text-align: center;
+  width: 410px;
+}
+
+.espacio {
+  height: 15px;
+}
+
+.grabar-div {
+  height: 70px;
+  margin: 30px auto 0 auto;
+  width: 231px;
+}
+
+.lista-establecimientos {
+  padding-left: 10px;
+  width: 65%;
+}
+
+.mailvu-div {
+  margin: 20px auto 0 auto;
+  height: 325px;
+  width: 410px;
+}
+
+.participar-div {
+  height: 78px;
+  margin: 10px auto 0 auto;
+  width: 327px;
+}
+
+.pregunta-text {
+  font-size: 1.5em;
+}
+
+.quince-text {
+  font-size: 1em;
+}
+
+.ticket-div {
+  width: 25%;
+}
+
+.ticket-field {
+  background: url("fondo_numeros.png");
+  border: none;
+  color: white;
+  font-size: 18px;
+  padding-left: 8px;
+}
+
+.ticket-img {
+  background-image: url("ticket.png");
+  height: 226px;
+  width: 239px;
+  vertical-align: bottom;
+}
+
+.ticket-number {
+  height: 37px;
+  margin: 10px auto 0 auto;
+  width: 149px;
+}
+
+.youtube-content {
+  margin: 20px auto 0 auto;
+  height: 250px;
+  width: 380px;
 }

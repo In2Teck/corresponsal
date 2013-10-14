@@ -19,7 +19,8 @@ class DisplayController < ApplicationController
 
   def record_entry
     @entry_id = params[:entry_id]
-    @hash = ""
+    @timestamp = Time.now.to_i
+    @hash = Digest::MD5.hexdigest("RECORD_MSG" + "JOSECUERVO" + @timestamp.to_s + "josecuervo" + ENV['MAILVU_SECRET'] + @entry_id)
     render :partial => 'record_entry', :content_type => 'text/html'
   end
 

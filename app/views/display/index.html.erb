@@ -6,17 +6,23 @@
 <% end %>
 <div id="fb-root"></div>
 <section id="section-fan">
-  <figure>
-    <div>VIDEO</div>
-    <figcaption>
-      <%= button_tag "PARTICIPA", :id => "participar-btn" %>
-    </figcaption>
-  </figure>
+  <article id="section-fan-header"></article>
+  <article id="section-fan-content">
+    <div class="content">
+      <div class="youtube-content">
+        <iframe type="text/html" width="100%" height="100%" src="http://www.youtube.com/embed/khIUitEyCOE" allowfullscreen frameborder="0">
+        </iframe>
+      </div>
+      <div class="participar-div">
+        <%= submit_tag '', :id => "participar-btn"%>
+      </div>
+    </div>
+  </article>
 
 </section>
 
 <section id="section-no-fan">
-  <div> DA CLICK EN "ME GUSTA" </div><br/>
+  <article id="section-fan-header"></article>
 </section>
 
 <div id="ruby-values" data-signed-request="<%= @signed_request %>" data-is-fan="<%= @is_fan%>">

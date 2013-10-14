@@ -1,3 +1,9 @@
-<article>
-<div id="entry-div" data-hash="<%= @hash %>"  data-entry="<%= @entry_id%>"></div>
-</article>
+<div class="espacio"></div>
+<div class="content">
+	<div class="quince-text"> TENDRÁS 15 SEGUNDOS PARA GRABAR TU RESPUESTA A: </div>
+	<div class="pregunta-text"> ¿DINOS POR QUÉ DEBERÍAS SER EL CORRESPONSAL TRADICIONAL? </div>
+	<div class="mailvu-div">
+		<iframe id="mailvu-widget" height="100%" width="100%" frameborder="no"></iframe>
+	</div>
+	<div id="entry-values" data-hash="<%= @hash %>" data-timestamp="<%= @timestamp %>" data-entry="<%= @entry_id%>"></div>
+</div>

@@ -1,9 +1,7 @@
-<article>
-	<div>
-		Tendrás 15 segundos para grabar tu respuesta a:
+<div class="content">
+	<div class="quince-text"> TENDRÁS 15 SEGUNDOS PARA GRABAR TU RESPUESTA A: </div>
+	<div class="pregunta-text"> ¿DINOS POR QUÉ DEBERÍAS SER EL CORRESPONSAL TRADICIONAL? </div>
+	<div class="grabar-div">
+		<%= button_tag '',  :id => "grabar-btn", :onclick => "recordEntry()" %>
 	</div>
-	<div>
-		¿Dinos por qué deberías ser el  corresponsal tradicional?
-	</div>
-	<%= button_tag 'GRABAR AQUÍ',  :id => "grabar-btn", :onclick => "recordEntry()" %>
-</article>
+</div>

@@ -1,12 +1,9 @@
-<article>
-	<div>
-		Ingresa el código de tu ticket de compra:
-	</div>
+<div class="content-ticket">
+	<div> INGRESA EL CÓDIGO DE TU TICKET DE COMPRA: </div>
 	<%= form_for(@entry, :html=> {:id => "entry-form"}, :remote => true) do |f| %>
 	  <% if @entry.errors.any? %>
 	    <div id="error_explanation">
 	      <h2><%= pluralize(@entry.errors.count, "error") %> prohibited this entry from being saved:</h2>
-
 	      <ul>
 	      <% @entry.errors.full_messages.each do |msg| %>
 	        <li><%= msg %></li>
@@ -19,11 +16,18 @@
 	    <%= f.hidden_field :user_uid, :value => current_user.uid %>
 	  </div>
 	  <div class="field">
-	    <%= f.label :ticket_number %><br />
-	    <%= f.text_field :ticket_number %>
+	    <%= f.text_field :ticket_number, :class => "ticket-field" %>
 	  </div>
-	  <div class="actions">
-	    <%= f.submit 'CONTINUAR', :id => 'ticket-btn'%>
+	  <div class="ticket-number">
+	    <%= f.submit "", :id => 'ticket-btn'%>
 	  </div>
 	<% end %>
-</article>
+</div>
+<div class="content-establecimientos">
+	<div class="lista-establecimientos">
+		<div>ESTABLECIMIENTOS PARTICIPANTES:</div>
+	</div>
+	<div class="ticket-div">
+		<div class="ticket-img"></div>
+	</div>
+</div>
