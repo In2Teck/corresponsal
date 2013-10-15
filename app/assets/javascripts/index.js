@@ -91,7 +91,7 @@ function initMailVU() {
   $("#mailvu-widget").attr('src', apiURL);
 }
 
-function widgetRecordingComplete() {
+function recordingComplete() {
   console.log("blablabla");
   $.ajax({
     type: "GET",
