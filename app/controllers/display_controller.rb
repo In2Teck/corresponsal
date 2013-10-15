@@ -24,6 +24,10 @@ class DisplayController < ApplicationController
     render :partial => 'record_entry', :content_type => 'text/html'
   end
 
+  def confirmation
+    render :partial => 'confirmation', :content_type => 'text/html'
+  end
+
 	def decode_data str
     encoded_sig, payload = str.split('.')
     data = ActiveSupport::JSON.decode base64_url_decode(payload)

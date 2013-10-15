@@ -1,3 +1,15 @@
+#continuar-btn {
+  background: transparent url("continuar_btn.png");
+  border: none;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+}
+
+#continuar-btn:hover {
+  background-image: url("continuar_btn_on.png");
+}
+
 #grabar-btn {
   background: transparent url("grabar_btn.png");
   border: none;
@@ -8,6 +20,18 @@
 
 #grabar-btn:hover {
   background-image: url("grabar_btn_on.png");
+}
+
+#otro-btn {
+  background: transparent url("otro_ticket_btn.png");
+  border: none;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+}
+
+#otro-btn:hover {
+  background-image: url("otro_ticket_btn_on.png");
 }
 
 #participar-btn {
@@ -47,31 +71,19 @@
   width: 100%;
 }
 
-#ticket-btn {
-  background: transparent url("continuar_btn.png");
-  border: none;
-  cursor: pointer;
-  height: 100%;
-  width: 100%;
-}
-
-#ticket-btn:hover {
-  background-image: url("continuar_btn_on.png");
-}
-
 .content {
   height: auto;
   margin: auto;
   width: 430px;
 }
 
-.content-establecimientos {
+.content-instrucciones {
   height: auto;
   margin: 30px auto 0 auto;
   width: 90%;
 }
 
-.content-establecimientos div{
+.content-instrucciones div{
   display: inline-block;
   vertical-align: top;
 }
@@ -81,6 +93,23 @@
   margin: auto;
   text-align: center;
   width: 410px;
+}
+
+.continuar-div {
+  height: 37px;
+  margin-left: 10px;
+  width: 149px;
+}
+
+.email-text {
+  font-size: 1.9em;
+  text-align: center;
+}
+
+.error-text {
+  color: #FF0000;
+  font-size: 1.2em;
+  margin-top: 5px;
 }
 
 .espacio {
@@ -93,15 +122,39 @@
   width: 231px;
 }
 
-.lista-establecimientos {
+.gracias-text {
+  font-size: 3.5em;
+  text-align: center;
+}
+
+.instrucciones {
+  font-size: 1.5em;
   padding-left: 10px;
   width: 65%;
 }
 
+.instrucciones-img {
+  background: url("instrucciones.png");
+  height: 242px;
+  width: 401px;
+}
+
 .mailvu-div {
-  margin: 20px auto 0 auto;
-  height: 325px;
+  margin: 70px auto 0 auto;
+  height: 375px;
   width: 410px;
+}
+
+.otro-div {
+  height: 67px;
+  margin: 0 auto;
+  width: 278px;
+}
+
+.otro-text {
+  font-size: 1.5em;
+  margin: 100px auto 40px auto;
+  text-align: center;
 }
 
 .participar-div {
@@ -111,23 +164,29 @@
 }
 
 .pregunta-text {
-  font-size: 1.5em;
+  font-size: 2.5em;
+  text-align: center;
 }
 
 .quince-text {
-  font-size: 1em;
+  font-size: 1.6em;
+  text-align: center;
 }
 
 .ticket-div {
   width: 25%;
 }
 
-.ticket-field {
+.ticket-number {
   background: url("fondo_numeros.png");
   border: none;
   color: white;
-  font-size: 18px;
+  font-family: corresponsal;
+  font-size: 1.6em;
+  height: 37px;
+  margin-right: 10px;
   padding-left: 8px;
+  width: 160px;
 }
 
 .ticket-img {
@@ -137,14 +196,18 @@
   vertical-align: bottom;
 }
 
-.ticket-number {
-  height: 37px;
-  margin: 10px auto 0 auto;
-  width: 149px;
+.ticket-text {
+  font-size: 1.5em;
 }
 
 .youtube-content {
   margin: 20px auto 0 auto;
   height: 250px;
   width: 380px;
+}
+
+.continuar-div, .ticket-number {
+  display: inline-block;
+  margin-top: 6px;
+  vertical-align: middle;
 }

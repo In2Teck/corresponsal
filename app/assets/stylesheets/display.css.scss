@@ -1,6 +1,14 @@
+@font-face {
+  font-family: corresponsal;
+  font-style: normal;
+  font-weight: normal;
+  src: url('OPTIVenusLight-Cond.eot'), url('OPTIVenusLight-Cond.ttf') format('truetype');
+}
+
 html {
 	background: url("fondo.png");
   color: black;
+  font-family: corresponsal;
   height: 1000px;
   width: 804px;
   max-width: 804px;
@@ -11,3 +19,12 @@ body {
 }
 
 textarea, input { outline: none; }
+
+.tos {
+  bottom: 5px;
+  font-size: 1.3em;
+  left: 40%;
+  position: fixed;
+  text-align: left;
+  width: 200px;
+}

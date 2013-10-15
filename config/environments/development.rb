@@ -1,6 +1,9 @@
 Corresponsal::Application.configure do
   ENV['FACEBOOK_APP_KEY'] = "430024737107497"
   ENV['FACEBOOK_APP_SECRET'] = "7161c719ea31a95f8b901c5484777122"
+
+  
+
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
@@ -36,4 +39,10 @@ Corresponsal::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Add the fonts path
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
+  # Precompile additional assets
+  config.assets.precompile += %w( .svg .eot .woff .ttf .otf )
 end

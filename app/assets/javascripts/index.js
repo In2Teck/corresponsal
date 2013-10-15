@@ -39,7 +39,7 @@ function onParticipar() {
           $(this).html(data).slideDown();
           $("#entry-form").bind("ajax:success", onNewEntry);
           $("#entry-form").bind("ajax:error", onNewEntryError);
-        });   
+        });
     },
     error: function() {
     } 
@@ -47,14 +47,13 @@ function onParticipar() {
 }
 
 function onNewEntry(event, data, status, xhr) {
-  console.log("result: " + data.id);
-  console.log("result: " + status);
   entry = data;  
   $.ajax({
     type: "GET",
     url: "/get_ready",
     data_type: "html",
     success: function(data, textStatus, jqXHR) {
+      $(".error-text").text("");
       $("#section-fan-content").fadeOut(function() {
           $(this).html(data).slideDown();
         });   
@@ -64,9 +63,8 @@ function onNewEntry(event, data, status, xhr) {
   }); 
 }
 
-function onNewEntryError(xhr, status, error) {
-  console.log("error: " + status);
-  console.log("error: " + error);
+function onNewEntryError(event, xhr, status, error) {
+  $(".error-text").text($.parseJSON(xhr.responseText).mensaje);
 }
 
 function recordEntry() {
@@ -91,4 +89,40 @@ function initMailVU() {
   var apiURL = "http://apitest.mailvu.com/api/v1/message?api-key=JOSECUERVO&action=RECORD_MSG&request-id=" + entry.id + "&user-id=josecuervo&timestamp=" + timestamp + "&hash=" + hashcode;
   console.log(apiURL);
   $("#mailvu-widget").attr('src', apiURL);
+}
+
+function widgetRecordingComplete() {
+  console.log("blablabla");
+  $.ajax({
+    type: "GET",
+    url: "/confirmation",
+    data_type: "html",
+    success: function(data, textStatus, jqXHR) {
+      $(".error-text").text("");
+      $("#section-fan").fadeOut(function() {
+          $(this).html(data).slideDown();
+        });   
+    },
+    error: function() {
+    } 
+  }); 
+}
+
+function otroTicket() {
+   $.ajax({
+    type: "GET",
+    url: "/new_entry",
+    data_type: "html",
+    success: function(data, textStatus, jqXHR) {
+      $("#section-fan").fadeOut(function() {
+          $(this).html('<article id="section-fan-header"></article><article id="section-fan-content">').slideDown(); 
+          $("#section-fan-content").html(data).slideDown();
+          $("#entry-form").bind("ajax:success", onNewEntry);
+          $("#entry-form").bind("ajax:error", onNewEntryError);
+        });   
+    },
+    error: function() {
+      console.log("error");
+    } 
+  });
 }

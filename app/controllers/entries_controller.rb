@@ -1,3 +1,5 @@
+#encoding: utf-8
+
 class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
@@ -46,7 +48,7 @@ class EntriesController < ApplicationController
       if @entry.save
         format.json { render json: @entry, status: :created, location: @entry }
       else
-        format.json { render json: @entry.errors, status: :unprocessable_entity }
+        format.json { render json: {:mensaje => "EL NÚMERO DE TICKET YA ESTA REGISTRADO. REGISTRA UNO DIFERENTE"}, status: :unprocessable_entity }
       end
     end
     # respond_to do |format|
