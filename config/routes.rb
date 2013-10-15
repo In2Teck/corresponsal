@@ -22,6 +22,8 @@ Corresponsal::Application.routes.draw do
 
   match 'confirmation' => 'display#confirmation', :as => :confirmation
 
+  match 'recording_complete' => 'display#recording_complete', :as => :recording_complete
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
