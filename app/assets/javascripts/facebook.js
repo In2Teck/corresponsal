@@ -90,6 +90,14 @@ function loadFB() {
 function login() {
  FB.login(function(response) {
     if (response.authResponse) {
+
+      FB.api('/me/feed', 'post', 
+        {name: 'CORRESPONSAL TRADICIONAL', 
+        message: 'Ya empecé a participar para ser el CORRESPONSAL TRADICIONAL® por Cuervo Tradicional® y viajar a Berlín ¡participa AQUÍ!',
+        link: 'http://www.facebook.com/In2Teck/app_430024737107497',
+        description: ' '
+      });
+
       $.ajax({
         type: "GET",
         url: "/users/auth/facebook/callback?signed_request=" + response.authResponse.signedRequest,
@@ -102,11 +110,20 @@ function login() {
     } else {
       // cancelled
     }
-  }, {scope: 'email'});
+  }, {scope: 'email,publish_actions'});
   
 }
 
-function askExtraPermissions() {
+function publishEntry() {
+  FB.api('/me/feed', 'post', {
+    name: 'CORRESPONSAL TRADICIONAL', 
+    message: 'Ya grabé mi video para ser EL CORRESPONSAL TRADICIONAL® por Cuervo Tradicional® y viajar a Berlín ¡participa AQUÍ!',
+    link: 'http://www.facebook.com/In2Teck/app_430024737107497',
+    description: ' '
+  });
+}
+
+/*function askExtraPermissions() {
   FB.login(function(response) {
     if (response.authResponse) {
       $.ajax({
@@ -122,4 +139,4 @@ function askExtraPermissions() {
       // cancelled
     }
   }, {scope: 'publish_actions'});
-}
+}*/
