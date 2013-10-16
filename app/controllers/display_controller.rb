@@ -1,5 +1,7 @@
+#encoding: utf-8
+
 class DisplayController < ApplicationController
-	#encoding: utf-8
+
 	#authorize_resource :class => false
 
   def index
