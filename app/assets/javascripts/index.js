@@ -5,8 +5,6 @@ $(document).on("ready", onReady);
 
 function onReady() {
   window.addEventListener("message", function(event) {
-    console.log("message: " + event.data);
-    console.log("message: " + event.origin);
     if (event.data == 'recordingComplete') {
       recordingComplete();
     }
@@ -101,7 +99,6 @@ function initMailVU() {
 }
 
 function recordingComplete() {
-  console.log("blablabla");
   $.ajax({
     type: "GET",
     url: "/confirmation",
@@ -114,7 +111,9 @@ function recordingComplete() {
     },
     error: function() {
     } 
-  }); 
+  });
+
+  publishEntry();
 }
 
 function otroTicket() {
