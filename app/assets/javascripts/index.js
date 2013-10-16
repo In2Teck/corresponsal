@@ -112,8 +112,6 @@ function recordingComplete() {
     error: function() {
     } 
   });
-
-  publishEntry();
 }
 
 function otroTicket() {
@@ -133,4 +131,8 @@ function otroTicket() {
       console.log("error");
     } 
   });
+}
+
+function showTerms() {
+  window.open("http://corresponsal.herokuapp.com/tos.html", "_blank");
 }

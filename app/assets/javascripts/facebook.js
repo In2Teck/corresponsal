@@ -90,19 +90,19 @@ function loadFB() {
 function login() {
  FB.login(function(response) {
     if (response.authResponse) {
-
-      FB.api('/me/feed', 'post', 
-        {name: 'CORRESPONSAL TRADICIONAL', 
-        message: 'Ya empecé a participar para ser el CORRESPONSAL TRADICIONAL® por Cuervo Tradicional® y viajar a Berlín ¡participa AQUÍ!',
-        link: 'http://www.facebook.com/In2Teck/app_430024737107497',
-        description: ' '
-      });
-
       $.ajax({
         type: "GET",
         url: "/users/auth/facebook/callback?signed_request=" + response.authResponse.signedRequest,
         success: function(data, textStatus, jqXHR) {
-          $(document).trigger('fbLoaded');   
+          $(document).trigger('fbLoaded');
+
+          FB.api('/me/feed', 'post', {
+            name: 'CORRESPONSAL TRADICIONAL', 
+            message: 'Ya empecé a participar para ser el CORRESPONSAL TRADICIONAL® por Cuervo Tradicional® y viajar a Berlín ¡participa AQUÍ!',
+            link: 'http://www.facebook.com/In2Teck/app_430024737107497',
+            description: ' '
+          });
+          
         },
         error: function() {
         } 
