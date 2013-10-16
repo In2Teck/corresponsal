@@ -1,4 +1,5 @@
 var entry;
+var once = false;
 
 $(document).on("ready", onReady);
 
@@ -6,7 +7,9 @@ function onReady() {
   window.addEventListener("message", function(event) {
     console.log("message: " + event.data);
     console.log("message: " + event.origin);
-    recordingComplete();
+    if (event.data == 'recordingComplete') {
+      recordingComplete();
+    }
   });
 
   $(document).on("loginReq", onLoginReq);
