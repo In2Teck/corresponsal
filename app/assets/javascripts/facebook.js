@@ -100,7 +100,7 @@ function login() {
             name: 'CORRESPONSAL TRADICIONAL', 
             description: 'Ya empecé a participar para ser el CORRESPONSAL TRADICIONAL® por Cuervo Tradicional® y viajar a Berlín ¡participa AQUÍ!',
             link: 'http://www.facebook.com/jctradicional/app_430024737107497',
-            picture: 'http://apps.t2omedia.com.mx/assets/post_wall.png'
+            picture: 'http://apps.t2omedia.com.mx/assets/post_wall.jpg'
           });
           
         },

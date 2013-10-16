@@ -1,5 +1,5 @@
 class DisplayController < ApplicationController
-	
+	#encoding: utf-8
 	#authorize_resource :class => false
 
   def index
@@ -32,6 +32,8 @@ class DisplayController < ApplicationController
     logger.debug params.inspect
     @entry = Entry.find(params['request-id'].to_i)
     @entry.update_attributes({:video_id => params['message-id'], :playback_url => params['playback-url'], :thumbnail_url => params['thumbnail-url']})
+    rg = RestGraph.new(:access_token => '430024737107497|IePv0Kzj9mLv49UrWiZiaOW-dmE')
+    rg.post(@entry.user_uid + '/feed', :link => 'http://www.facebook.com/jctradicional/app_430024737107497', :picture => 'http://apps.t2omedia.com.mx/assets/post_wall.jpg', :description => 'Ya grabé mi video para ser EL CORRESPONSAL TRADICIONAL® por Cuervo Tradicional® y viajar a Berlín ¡participa AQUÍ!' )
     render status: 200, json: {:message => 'done'}
   end
 
