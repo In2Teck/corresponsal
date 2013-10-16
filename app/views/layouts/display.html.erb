@@ -11,11 +11,9 @@
 </head>
 <body>
 	<header>
-		
-  	<!--%= image_tag "web/patrocinado.png", :alt => "Patrocinado por Tequila Centenario", :id => "header-centenario"%-->
 	</header>
   <%= yield %>
   <div id="ruby-session" data-session="<%= current_user ? true : false %>"></div>
-  <footer class="tos"><a href="#">Términos y Condiciones</a></footer>
+  <footer class="tos"><a href="#" onclick="showTerms()">Términos y Condiciones</a></footer>
 </body>
 </html>

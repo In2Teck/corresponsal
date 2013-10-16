@@ -1,12 +1,13 @@
 var entry;
+var once = false;
 
 $(document).on("ready", onReady);
 
 function onReady() {
   window.addEventListener("message", function(event) {
-    console.log("message: " + event.data);
-    console.log("message: " + event.origin);
-    recordingComplete();
+    if (event.data == 'recordingComplete') {
+      recordingComplete();
+    }
   });
 
   $(document).on("loginReq", onLoginReq);
@@ -92,13 +93,12 @@ function recordEntry() {
 function initMailVU() {
   var timestamp = $("#entry-values").data("timestamp");
   var hashcode = $("#entry-values").data("hash");
-  var apiURL = "https://apitest.mailvu.com/api/v1/message?api-key=JOSECUERVO&action=RECORD_MSG&request-id=" + entry.id + "&user-id=josecuervo&timestamp=" + timestamp + "&hash=" + hashcode;
+  var apiURL = "https://mailvu.com/api/v1/message?api-key=JOSECUERVO&action=RECORD_MSG&request-id=" + entry.id + "&user-id=josecuervo&timestamp=" + timestamp + "&hash=" + hashcode;
   console.log(apiURL);
   $("#mailvu-widget").attr('src', apiURL);
 }
 
 function recordingComplete() {
-  console.log("blablabla");
   $.ajax({
     type: "GET",
     url: "/confirmation",
@@ -111,7 +111,7 @@ function recordingComplete() {
     },
     error: function() {
     } 
-  }); 
+  });
 }
 
 function otroTicket() {
@@ -131,4 +131,8 @@ function otroTicket() {
       console.log("error");
     } 
   });
+}
+
+function showTerms() {
+  window.open("http://apps.t2omedia.com.mx/tos.html", "_blank");
 }
