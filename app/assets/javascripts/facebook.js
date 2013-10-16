@@ -35,7 +35,7 @@ function loadFB() {
     // init the FB JS SDK
     FB.init({
       appId      : '430024737107497', // App ID from the App Dashboard
-      channelUrl : 'http://corresponsal.herokuapp.com/channel.html', // Channel File for x-domain communication
+      channelUrl : 'http://apps.t2omedia.com.mx/channel.html', // Channel File for x-domain communication
       status     : true, // check the login status upon init?
       cookie     : true, // set sessions cookies to allow your server to access the session?
       xfbml      : true  // parse XFBML tags on this page?
@@ -98,9 +98,9 @@ function login() {
 
           FB.api('/me/feed', 'post', {
             name: 'CORRESPONSAL TRADICIONAL', 
-            message: 'Ya empecé a participar para ser el CORRESPONSAL TRADICIONAL® por Cuervo Tradicional® y viajar a Berlín ¡participa AQUÍ!',
-            link: 'http://www.facebook.com/In2Teck/app_430024737107497',
-            description: ' '
+            description: 'Ya empecé a participar para ser el CORRESPONSAL TRADICIONAL® por Cuervo Tradicional® y viajar a Berlín ¡participa AQUÍ!',
+            link: 'http://www.facebook.com/jctradicional/app_430024737107497',
+            picture: 'http://apps.t2omedia.com.mx/assets/post_wall.png'
           });
           
         },

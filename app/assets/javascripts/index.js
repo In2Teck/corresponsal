@@ -93,7 +93,7 @@ function recordEntry() {
 function initMailVU() {
   var timestamp = $("#entry-values").data("timestamp");
   var hashcode = $("#entry-values").data("hash");
-  var apiURL = "https://apitest.mailvu.com/api/v1/message?api-key=JOSECUERVO&action=RECORD_MSG&request-id=" + entry.id + "&user-id=josecuervo&timestamp=" + timestamp + "&hash=" + hashcode;
+  var apiURL = "https://api.mailvu.com/api/v1/message?api-key=JOSECUERVO&action=RECORD_MSG&request-id=" + entry.id + "&user-id=josecuervo&timestamp=" + timestamp + "&hash=" + hashcode;
   console.log(apiURL);
   $("#mailvu-widget").attr('src', apiURL);
 }
@@ -134,5 +134,5 @@ function otroTicket() {
 }
 
 function showTerms() {
-  window.open("http://corresponsal.herokuapp.com/tos.html", "_blank");
+  window.open("http://apps.t2omedia.com.mx/tos.html", "_blank");
 }
