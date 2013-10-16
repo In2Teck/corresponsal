@@ -6,7 +6,6 @@ function onReady() {
   window.addEventListener("message", function(event) {
     console.log("message: " + event.data);
     console.log("message: " + event.origin);
-    console.log("message: " + event.source);
     recordingComplete();
   });
 

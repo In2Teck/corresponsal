@@ -30,6 +30,8 @@ class DisplayController < ApplicationController
 
   def recording_complete
     logger.debug params.inspect
+    @entry = Entry.find(params['request-id'].to_i)
+    @entry.update_attributes({:video_id => params['message-id'], :playback_url => params['playback-url'], :thumbnail_url => params['thumbnail-url']})
     render status: 200, json: {:message => 'done'}
   end
 
