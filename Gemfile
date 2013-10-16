@@ -8,6 +8,8 @@ gem 'rails', '3.2.11'
 gem 'devise'
 gem 'omniauth-facebook', '1.4.0'
 gem 'cancan'
+gem 'rest-client'
+gem 'rest-graph'
 
 # Gems used only for assets and not required
 # in production environments by default.
