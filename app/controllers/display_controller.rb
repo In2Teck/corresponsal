@@ -31,11 +31,11 @@ class DisplayController < ApplicationController
   end
 
   def recording_complete
-    logger.debug params.inspect
+    timestamp = Time.now.to_i
     @entry = Entry.find(params['request-id'].to_i)
     @entry.update_attributes({:video_id => params['message-id'], :playback_url => params['playback-url'], :thumbnail_url => params['thumbnail-url']})
     rg = RestGraph.new(:access_token => ENV['APP_TOKEN'])
-    rg.post(@entry.user_uid + '/feed', :picture => @entry.thumbnail_url, :link => 'http://www.facebook.com/jctradicional/app_430024737107497', :picture => 'http://apps.t2omedia.com.mx/assets/post_wall.jpg', :description => 'Ya grabé mi video para ser EL CORRESPONSAL TRADICIONAL® por Cuervo Tradicional® y viajar a Berlín ¡participa AQUÍ!' )
+    rg.post(@entry.user_uid + '/feed', :picture => @entry.thumbnail_url + '?t=' + timestamp.to_s, :link => 'http://www.facebook.com/jctradicional/app_430024737107497', :picture => 'http://apps.t2omedia.com.mx/assets/post_wall.jpg', :description => 'Ya grabé mi video para ser EL CORRESPONSAL TRADICIONAL® por Cuervo Tradicional® y viajar a Berlín ¡participa AQUÍ!' )
     render status: 200, json: {:message => 'done'}
   end
 

@@ -94,7 +94,7 @@ function login() {
         type: "GET",
         url: "/users/auth/facebook/callback?signed_request=" + response.authResponse.signedRequest,
         success: function(data, textStatus, jqXHR) {
-          $(document).trigger('fbLoaded');
+          $(document).trigger('loginSuccess');
 
           FB.api('/me/feed', 'post', {
             name: 'CORRESPONSAL TRADICIONAL', 

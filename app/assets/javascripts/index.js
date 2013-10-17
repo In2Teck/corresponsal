@@ -12,6 +12,7 @@ function onReady() {
 
   $(document).on("loginReq", onLoginReq);
   $(document).on("fbLoaded", onFBLoaded);
+  $(document).on("loginSuccess", onParticipar);
   
   if ($("#ruby-values").data("is-fan")) {
     $("#section-no-fan").css({display: "none"});
