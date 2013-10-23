@@ -71,21 +71,17 @@
   width: 100%;
 }
 
+.confirmacion {
+  background: url("corte_queda.png");
+  height: 166px;
+  margin: auto;
+  width: 516px;
+}
+
 .content {
   height: auto;
   margin: auto;
-  width: 430px;
-}
-
-.content-instrucciones {
-  height: auto;
-  margin: 30px auto 0 auto;
-  width: 90%;
-}
-
-.content-instrucciones div{
-  display: inline-block;
-  vertical-align: top;
+  width: 530px;
 }
 
 .content-ticket {
@@ -97,14 +93,14 @@
 
 .continuar-div {
   height: 37px;
-  margin-left: 10px;
+  margin: 20px auto 0 auto;
   width: 149px;
 }
 
-.email-text {
+/*.email-text {
   font-size: 1.9em;
   text-align: center;
-}
+}*/
 
 .error-text {
   color: #FF0000;
@@ -118,25 +114,27 @@
 
 .grabar-div {
   height: 70px;
-  margin: 30px auto 0 auto;
+  margin: 50px auto 0 auto;
   width: 231px;
 }
 
-.gracias-text {
+/*.gracias-text {
   font-size: 3.5em;
   text-align: center;
-}
+}*/
 
 .instrucciones {
-  font-size: 1.5em;
-  padding-left: 10px;
-  width: 65%;
+  background-color: rgba(189, 138, 21, 0.6);
+  height: 244px;
+  margin: auto;
+  margin: 0 auto 20px auto;
+  width: 614px;
 }
 
 .instrucciones-img {
-  background: url("instrucciones.png");
-  height: 242px;
-  width: 401px;
+  background: url("instrucciones_sinfondo.png");
+  height: 100%;
+  width: 100%;
 }
 
 .mailvu-div {
@@ -159,8 +157,8 @@
 }
 
 .otro-text {
-  font-size: 1.5em;
-  margin: 100px auto 40px auto;
+  font-size: 1.8em;
+  margin: 70px auto 30px auto;
   text-align: center;
 }
 
@@ -168,6 +166,13 @@
   height: 78px;
   margin: 10px auto 0 auto;
   width: 327px;
+}
+
+.pregunta {
+  background: url("tendras_01.png");
+  height: 248px;
+  margin: auto;
+  width: 454px;
 }
 
 .pregunta-text {
@@ -181,6 +186,9 @@
 }
 
 .ticket-div {
+  bottom: 55px;
+  position: fixed;
+  right: 100px;
   width: 25%;
 }
 
@@ -192,29 +200,24 @@
   font-size: 1.6em;
   height: 37px;
   margin-right: 10px;
+  margin-top: 20px;
   padding-left: 8px;
-  width: 160px;
+  width: 250px;
 }
 
 .ticket-img {
   background-image: url("ticket.png");
-  height: 226px;
+  height: 216px;
   width: 239px;
   vertical-align: bottom;
 }
 
 .ticket-text {
-  font-size: 1.5em;
+  font-size: 1.95em;
 }
 
 .youtube-content {
   margin: 20px auto 0 auto;
   height: 250px;
   width: 380px;
-}
-
-.continuar-div, .ticket-number {
-  display: inline-block;
-  margin-top: 6px;
-  vertical-align: middle;
 }

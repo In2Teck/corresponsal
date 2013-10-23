@@ -1,23 +1,23 @@
-<div class="content-ticket">
-	<div class="ticket-text"> INGRESA EL CÓDIGO DE TU TICKET DE COMPRA: </div>
-	<%= form_for(@entry, :html=> {:id => "entry-form"}, :remote => true) do |f| %>
-	  <div class="field">
-	    <%= f.hidden_field :user_uid, :value => current_user.uid %>
-	  </div>
-	  <div class="field">
-	    <%= f.text_field :ticket_number, :class => "ticket-number" %>
-	    <div class="continuar-div">
-	    	<%= f.submit "", :id => 'continuar-btn'%>
-	  	</div>
-	  </div>
-	  <div class="error-text"></div>
-	<% end %>
-</div>
-<div class="content-instrucciones">
-	<div class="instrucciones">
-		<div class="instrucciones-img"></div>
+<br/>
+<article class="instrucciones">
+	<div class="instrucciones-img"></div>
+</article>
+
+	<div class="content-ticket">
+		<div class="ticket-text"> INGRESA EL CÓDIGO DE TU TICKET DE COMPRA: </div>
+		<%= form_for(@entry, :html=> {:id => "entry-form"}, :remote => true) do |f| %>
+		  <div class="field">
+		    <%= f.hidden_field :user_uid, :value => current_user.uid %>
+		  </div>
+		  <div class="field">
+		    <%= f.text_field :ticket_number, :class => "ticket-number" %>
+		  </div>
+		  <div class="error-text"></div>
+		  <div class="continuar-div">
+		    <%= f.submit "", :id => 'continuar-btn'%>
+		  </div>
+		<% end %>
 	</div>
 	<div class="ticket-div">
 		<div class="ticket-img"></div>
 	</div>
-</div>

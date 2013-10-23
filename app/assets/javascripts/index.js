@@ -43,7 +43,7 @@ function onParticipar() {
     url: "/new_entry",
     data_type: "html",
     success: function(data, textStatus, jqXHR) {
-      $("#section-fan-content").fadeOut(function() {
+      $("#section-fan").fadeOut(function() {
           $(this).html(data).slideDown();
           $("#entry-form").bind("ajax:success", onNewEntry);
           $("#entry-form").bind("ajax:error", onNewEntryError);
@@ -62,7 +62,7 @@ function onNewEntry(event, data, status, xhr) {
     data_type: "html",
     success: function(data, textStatus, jqXHR) {
       $(".error-text").text("");
-      $("#section-fan-content").fadeOut(function() {
+      $("#section-fan").fadeOut(function() {
           $(this).html(data).slideDown();
         });   
     },
@@ -122,8 +122,7 @@ function otroTicket() {
     data_type: "html",
     success: function(data, textStatus, jqXHR) {
       $("#section-fan").fadeOut(function() {
-          $(this).html('<article id="section-fan-header"></article><article id="section-fan-content">').slideDown(); 
-          $("#section-fan-content").html(data).slideDown();
+          $(this).html(data).slideDown();
           $("#entry-form").bind("ajax:success", onNewEntry);
           $("#entry-form").bind("ajax:error", onNewEntryError);
         });   
