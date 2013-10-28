@@ -4,7 +4,7 @@
 </article>
 
 	<div class="content-ticket">
-		<div class="ticket-text"> INGRESA EL CÓDIGO DE TU TICKET DE COMPRA: </div>
+		<div class="ticket-text"> INGRESA AQUÍ EL CÓDIGO DE TU TICKET DE COMPRA: </div>
 		<%= form_for(@entry, :html=> {:id => "entry-form"}, :remote => true) do |f| %>
 		  <div class="field">
 		    <%= f.hidden_field :user_uid, :value => current_user.uid %>

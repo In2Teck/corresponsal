@@ -94,7 +94,7 @@ function recordEntry() {
 function initMailVU() {
   var timestamp = $("#entry-values").data("timestamp");
   var hashcode = $("#entry-values").data("hash");
-  var apiURL = "https://mailvu.com/api/v1/message?api-key=JOSECUERVO&action=RECORD_MSG&request-id=" + entry.id + "&user-id=josecuervo&timestamp=" + timestamp + "&hash=" + hashcode;
+  var apiURL = "https://apitest.mailvu.com/api/v1/message?api-key=JOSECUERVO&action=RECORD_MSG&request-id=" + entry.id + "&user-id=josecuervo&timestamp=" + timestamp + "&hash=" + hashcode;
   console.log(apiURL);
   $("#mailvu-widget").attr('src', apiURL);
 }
