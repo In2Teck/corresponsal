@@ -8,6 +8,9 @@ function onReady() {
     if (event.data == 'recordingComplete') {
       recordingComplete();
     }
+    else if (event.data == 'playbackComplete') {
+      playbackComplete();
+    }
   });
 
   $(document).on("loginReq", onLoginReq);
@@ -100,15 +103,20 @@ function initMailVU() {
 }
 
 function recordingComplete() {
+  $(".quince-div").fadeOut(function() {
+    $(this).replaceWith("<div class='confirmacion'></div>").fadeIn();
+  });
+}
+
+function playbackComplete() {
   $.ajax({
     type: "GET",
     url: "/confirmation",
     data_type: "html",
     success: function(data, textStatus, jqXHR) {
-      $(".error-text").text("");
-      $("#section-fan").fadeOut(function() {
-          $(this).html(data).slideDown();
-        });   
+      $(".content").fadeOut(function() {
+        $(this).replaceWith(data).fadeIn();
+      });
     },
     error: function() {
     } 

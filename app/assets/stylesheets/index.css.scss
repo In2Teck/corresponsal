@@ -73,9 +73,9 @@
 
 .confirmacion {
   background: url("corte_queda.png");
-  height: 244px;
+  height: 224px;
   margin: auto;
-  width: 614px;
+  width: 594px;
 }
 
 .content {
@@ -104,7 +104,7 @@
 }
 
 .espacio {
-  height: 15px;
+  height: 10px;
 }
 
 .grabar-div {
@@ -128,7 +128,7 @@
 }
 
 .mailvu-div {
-  margin: 70px auto 0 auto;
+  margin: 0 auto;
   height: 375px;
   width: 410px;
 }
@@ -165,14 +165,11 @@
   width: 454px;
 }
 
-.pregunta-text {
-  font-size: 2.5em;
-  text-align: center;
-}
-
-.quince-text {
-  font-size: 1.6em;
-  text-align: center;
+.quince-div {
+  background: url("tendras_02.png");
+  height: 224px;
+  margin: auto;
+  width: 454px;
 }
 
 .ticket-div {
