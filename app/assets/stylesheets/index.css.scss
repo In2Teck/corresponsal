@@ -49,7 +49,7 @@
 #section-fan {
   display: none;
   height: 100%;
-  margin-top: 320px;
+  margin-top: 180px;
   width: 100%;
 }
 
@@ -67,7 +67,7 @@
 
 #section-no-fan {
   height: 100%;
-  margin-top: 320px;
+  margin-top: 180px;
   width: 100%;
 }
 
@@ -82,6 +82,12 @@
   height: auto;
   margin: auto;
   width: 530px;
+}
+
+.content-large {
+  height: auto;
+  margin: auto;
+  width: 100%;
 }
 
 .content-ticket {
@@ -167,7 +173,7 @@
 
 .quince-div {
   background: url("tendras_02.png");
-  height: 224px;
+  height: 205px;
   margin: auto;
   width: 454px;
 }
@@ -205,6 +211,6 @@
 
 .youtube-content {
   margin: 20px auto 0 auto;
-  height: 250px;
-  width: 380px;
+  height: 410px;
+  width: 690px;
 }
