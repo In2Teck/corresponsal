@@ -1,6 +1,8 @@
 Corresponsal::Application.routes.draw do
   
-  resources :entries
+  resources :entries do
+    match 'download'
+  end
 
   resources :roles
 
@@ -12,7 +14,9 @@ Corresponsal::Application.routes.draw do
 	  get 'signup', :to => "devise/registrations#new"
   end
 
-  resources :users
+  resources :users do
+    match 'get_entries'
+  end
 
   match 'new_entry' => 'display#new_entry', :as => :new_entry
 
@@ -23,6 +27,9 @@ Corresponsal::Application.routes.draw do
   match 'confirmation' => 'display#confirmation', :as => :confirmation
 
   match 'recording_complete' => 'display#recording_complete', :as => :recording_complete
+
+  match 'admin' => 'admin#index', :as => :admin
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

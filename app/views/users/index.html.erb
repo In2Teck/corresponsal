@@ -1,27 +1,34 @@
-<h1>Listing users</h1>
-
-<table>
-  <tr>
-    <th>External ID</th>
-    <th>First name</th>
-    <th>Last name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @users.each do |user| %>
-  <tr>
-    <td><%= user.uid %></td>
-    <td><%= user.first_name %></td>
-    <td><%= user.last_name %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<% content_for :head_script do %>
+  <%= javascript_include_tag "users" %>
 <% end %>
-</table>
 
-<br />
+<section>
+    <h2>Reporte de Usuarios</h2>
+    <%= will_paginate @users, :previous_label => ApplicationHelper::PREV_LBL, :next_label => ApplicationHelper::NEXT_LBL %>
+    <table class="table table-striped table-bordered responsive">
+      <tr>
+        <th><%= sortable "first_name", "Nombre" %></th>
+        <th><%= sortable "email", "Correo" %></th>
+        <th><%= sortable "videos", "Videos Grabados" %></th>
+      </tr>
 
-<%= link_to 'New User', new_user_path %>
+    <% @users.each do |user| %>
+      <tr>
+        <td class="centered">
+            <%= image_tag "https://graph.facebook.com/#{user.uid}/picture", :class => "usuario-thumb horizontal" %>
+            <%= link_to user.first_name + ' ' + user.last_name, "http://facebook.com/#{user.uid}", :target => "_blank", :class => "horizontal" %></td>
+        <td><%= user.email %></td>
+        <td><%= user['videos'] %>
+          <% if user['videos'] > 0%>
+            &nbsp;&nbsp;<%=link_to "Ver", "#", :onclick => "getUserEntries(#{user.uid})"%></td>
+          <% end %>
+      </tr>
+    <% end %>
+    </table>
+
+    <div id="myModal" class="hide">
+        <h2>Videos</h2>
+        <table id="userEntries" class="table table-striped table-bordered responsive"></table>
+        </div>
+    </div>
+</section>

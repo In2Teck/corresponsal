@@ -4,10 +4,11 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
-    @entries = Entry.all
+    #@entries = Entry.where("video_id is not null")
+    @entries = Entry.find_by_sql("SELECT (users.first_name || ' ' || users.last_name) as autor, entries.id ,entries.created_at as fecha, entries.user_uid, entries.video_id, entries.ticket_number, entries.playback_url, entries.thumbnail_url, entries.created_at FROM entries LEFT OUTER JOIN users ON entries.user_uid = users.uid WHERE entries.video_id is not null ORDER BY #{sort_column} #{sort_direction}").paginate(:page => params[:page])
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html {render layout: "admin"}
       format.json { render json: @entries }
     end
   end
@@ -82,6 +83,13 @@ class EntriesController < ApplicationController
       format.html { redirect_to entries_url }
       format.json { head :no_content }
     end
+  end
+
+  def download
+    entry = Entry.find(params[:entry_id])
+    timestamp = Time.now.to_i
+    hash = Digest::MD5.hexdigest("DOWNLOAD_MP4" + "JOSECUERVO" + timestamp.to_s + "josecuervo" + ENV['MAILVU_SECRET'] + entry.id.to_s + entry.video_id)
+    render :json => {:hash => hash, :timestamp => timestamp, :video_id => entry.video_id}
   end
 
 end

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+  <title>Corresponsal Tradicional Administrador</title>
+  <%= stylesheet_link_tag "base_admin", "admin", :media => "all"%>
+  <%= javascript_include_tag "base_admin" %>
+  <%= yield :head_script %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<header>
+    <%= image_tag "t2omedia.png", :class => "logo horizontal-middle" %>
+		<h1 class="horizontal-middle">Corresponsal Tradicional</h1>
+	</header>
+	<div class="navbar">
+  	<div class="navbar-inner">
+    	<div class="container">
+      	<a href="#menu" class="menu-trigger meteocon" data-meteocon="M"></a>
+        <div class="nav-collapse collapse">
+        	<nav id="menu">
+          	<ul class="nav">
+              <li id="resumen-li"><%= link_to "Resumen", "/admin", :class => "brand" %></li>
+              <li id="usuarios-li"><%= link_to "Usuarios", users_path, :class => "brand" %></li>
+              <li id="videos-li"><%= link_to "Videos", entries_path, :class => "brand" %></li>
+              <li><%= link_to "Salir", "/logout", :class=>"brand" %></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+<%= yield %>
+
+</body>
+</html>

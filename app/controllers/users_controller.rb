@@ -5,10 +5,11 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    #@users = User.all
+    @users = User.find_by_sql("SELECT users.id, users.uid, users.first_name, users.last_name, users.email, users.created_at as fecha, SUM(entries.video_id is not null) as videos FROM users LEFT OUTER JOIN entries ON users.uid = entries.user_uid GROUP BY users.id ORDER BY #{sort_column} #{sort_direction}").paginate(:page => params[:page])
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html {render layout: "admin"}
       format.json { render json: @users }
     end
   end
@@ -83,4 +84,12 @@ class UsersController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def get_entries
+    @entries = Entry.where("user_uid = ? and video_id is not null", params[:user_id])
+    respond_to do |format|
+      format.json { render json: @entries}
+    end
+  end
+
 end

@@ -1,0 +1,13 @@
+<% content_for :head_script do %>
+  <%= javascript_include_tag "admin" %>
+<% end %>
+
+<section>
+	<h2>Resumen</h2>
+	<article>
+		<ul>
+			<li> Usuarios: <%= @users %> </li>
+			<li> Videos: <%= @entries %> </li>
+		</ul>
+	</article>
+</section>

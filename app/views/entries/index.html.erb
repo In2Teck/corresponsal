@@ -1,31 +1,30 @@
-<h1>Listing entries</h1>
-
-<table>
-  <tr>
-    <th>User uid</th>
-    <th>Ticket number</th>
-    <th>Video</th>
-    <th>Playback url</th>
-    <th>Thumbnail url</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @entries.each do |entry| %>
-  <tr>
-    <td><%= entry.user_uid %></td>
-    <td><%= entry.ticket_number %></td>
-    <td><%= entry.video_id %></td>
-    <td><%= entry.playback_url %></td>
-    <td><%= entry.thumbnail_url %></td>
-    <td><%= link_to 'Show', entry %></td>
-    <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
-    <td><%= link_to 'Destroy', entry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<% content_for :head_script do %>
+  <%= javascript_include_tag "entries" %>
 <% end %>
-</table>
 
-<br />
+<section>
+    <h2>Reporte de Videos</h2>
+    <%= will_paginate @entries, :previous_label => ApplicationHelper::PREV_LBL, :next_label => ApplicationHelper::NEXT_LBL %>
+    <table class="table table-striped table-bordered responsive">
+      <tr>
+        <th>Video</th>
+        <th><%= sortable "ticket_number", "Ticket" %></th>
+        <th><%= sortable "autor", "Autor" %></th>
+        <th><%= sortable "fecha", "Fecha" %></th>
+        <th/>
+      </tr>
 
-<%= link_to 'New Entry', new_entry_path %>
+    <% @entries.each do |entry| %>
+      <tr>
+        <td class="video-td">
+          <%= link_to image_tag(entry.thumbnail_url, :class => "video-thumb"), entry.playback_url, :target => "_blank"%>
+        </td>
+        <td><%= entry.ticket_number %></td>
+        <td><%= link_to entry['autor'], "http://facebook.com/#{entry.user_uid}", :target => "_blank", :class => "horizontal" %></td>
+        <td class="centered"><%= entry.created_at.in_time_zone("Mexico City").strftime("%h %d %Y") %></td>
+        <td> <%=link_to"Descargar", "#", :onclick => "downloadEntry(#{entry.id})" %> </td>  
+      </tr>
+    <% end %>
+    </table>
+</section>
+
