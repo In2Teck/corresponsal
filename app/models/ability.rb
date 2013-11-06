@@ -10,7 +10,7 @@ class Ability
       can :manage, :display
       can :manage, :entries
       can :manage, :users
-      cannot :manage, :admin
+      cannot :index, :admin
       cannot :index, :entries
       cannot :index, :users
 	  end
