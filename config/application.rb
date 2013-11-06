@@ -60,11 +60,11 @@ module Corresponsal
     config.assets.version = '1.0'
 
     config.to_prepare do
-      Devise::SessionsController.layout "admin"
-      Devise::RegistrationsController.layout "admin" 
-      Devise::ConfirmationsController.layout "admin"
-      Devise::UnlocksController.layout "admin"            
-      Devise::PasswordsController.layout "admin"        
+      Devise::SessionsController.layout "login"
+      Devise::RegistrationsController.layout "login" 
+      Devise::ConfirmationsController.layout "login"
+      Devise::UnlocksController.layout "login"       
+      Devise::PasswordsController.layout "login"        
     end
 
   end
