@@ -4,8 +4,7 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
-    #@entries = Entry.where("video_id is not null")
-    @entries = Entry.find_by_sql("SELECT (users.first_name || ' ' || users.last_name) as autor, entries.id ,entries.created_at as fecha, entries.user_uid, entries.video_id, entries.ticket_number, entries.playback_url, entries.thumbnail_url, entries.created_at FROM entries LEFT OUTER JOIN users ON entries.user_uid = users.uid WHERE entries.video_id is not null ORDER BY #{sort_column} #{sort_direction}").paginate(:page => params[:page])
+    @entries = Entry.find_by_sql("SELECT concat(users.first_name, ' ', users.last_name) as autor, entries.id ,entries.created_at as fecha, entries.user_uid, entries.video_id, entries.ticket_number, entries.playback_url, entries.thumbnail_url, entries.created_at FROM entries LEFT OUTER JOIN users ON entries.user_uid = users.uid WHERE entries.video_id is not null ORDER BY #{sort_column} #{sort_direction}").paginate(:page => params[:page])
 
     respond_to do |format|
       format.html {render layout: "admin"}

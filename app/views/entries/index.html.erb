@@ -17,7 +17,7 @@
     <% @entries.each do |entry| %>
       <tr>
         <td class="video-td">
-          <%= link_to image_tag(entry.thumbnail_url, :class => "video-thumb"), entry.playback_url, :target => "_blank"%>
+          <iframe src="<%=entry.playback_url.sub! '/msg/', '/embed/'%>" frameborder="no" scrolling="no" height="100%" width="100%"></iframe>
         </td>
         <td><%= entry.ticket_number %></td>
         <td><%= link_to entry['autor'], "http://facebook.com/#{entry.user_uid}", :target => "_blank", :class => "horizontal" %></td>

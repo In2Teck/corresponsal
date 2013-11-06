@@ -20,7 +20,7 @@
         <td><%= user.email %></td>
         <td><%= user['videos'] %>
           <% if user['videos'] > 0%>
-            &nbsp;&nbsp;<%=link_to "Ver", "#", :onclick => "getUserEntries(#{user.uid})"%></td>
+            &nbsp;&nbsp;<%=link_to "Ver", "#", :onclick => "getUserEntries(#{user.uid}, '#{user.first_name}')"%></td>
           <% end %>
       </tr>
     <% end %>
