@@ -20,10 +20,10 @@
         <div class="nav-collapse collapse">
         	<nav id="menu">
           	<ul class="nav">
-              <li id="resumen-li"><%= link_to "Resumen", "/admin", :class => "brand" %></li>
+              <li id="resumen-li"><%= link_to "Resumen", :admin, :class => "brand" %></li>
               <li id="usuarios-li"><%= link_to "Usuarios", users_path, :class => "brand" %></li>
               <li id="videos-li"><%= link_to "Videos", entries_path, :class => "brand" %></li>
-              <li><%= link_to "Salir", "/logout", :class=>"brand" %></li>
+              <li><%= link_to "Salir", :admin_logout, :class=>"brand" %></li>
             </ul>
           </nav>
         </div>

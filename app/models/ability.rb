@@ -8,11 +8,11 @@ class Ability
       can :manage, :all
 	  else
       can :manage, :display
-      can :manage, :entries
-      can :manage, :users
+      cannot :index, User
+      cannot :index, Entry
+      can :create, User
+      can :create, Entry
       #cannot :index, :admin
-      cannot :index, :entries
-      cannot :index, :users
 	  end
   end
 

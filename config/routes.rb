@@ -30,6 +30,8 @@ Corresponsal::Application.routes.draw do
 
   match 'admin' => 'admin#index', :as => :admin
 
+  match 'admin/logout', :to => "admin#logout", :as => :admin_logout
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
