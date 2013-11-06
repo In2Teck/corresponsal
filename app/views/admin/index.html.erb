@@ -1,4 +1,4 @@
-<% if admin_user_signed_in? %>
+<% if current_user and current_user.role?(:admin) %>
 
 <% content_for :head_script do %>
   <%= javascript_include_tag "admin" %>
