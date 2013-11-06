@@ -1,5 +1,3 @@
-<% if current_user and current_user.role?(:admin) %>
-
 <% content_for :head_script do %>
   <%= javascript_include_tag "admin" %>
 <% end %>
@@ -13,11 +11,3 @@
 		</ul>
 	</article>
 </section>
-
-<% else %>
-
-  <script>
-    window.top.location = "/signin";
-  </script>  
-
-<% end %>
