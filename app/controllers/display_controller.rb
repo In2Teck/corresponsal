@@ -2,7 +2,7 @@
 
 class DisplayController < ApplicationController
 
-	#authorize_resource :class => false
+	authorize_resource :class => false
 
   def index
     @signed_request = params[:signed_request]

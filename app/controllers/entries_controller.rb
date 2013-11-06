@@ -1,6 +1,9 @@
 #encoding: utf-8
 
 class EntriesController < ApplicationController
+
+  authorize_resource
+
   # GET /entries
   # GET /entries.json
   def index

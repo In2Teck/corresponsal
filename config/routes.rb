@@ -30,7 +30,6 @@ Corresponsal::Application.routes.draw do
 
   match 'admin' => 'admin#index', :as => :admin
 
-
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
