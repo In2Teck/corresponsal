@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+  <title>Corresponsal Tradicional Administrador</title>
+  <%= stylesheet_link_tag "base_admin", "admin", :media => "all"%>
+  <%= javascript_include_tag "base_admin" %>
+  <%= yield :head_script %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<header>
+		<img class="logo horizontal-middle" src="../assets/t2omedia.png"/>
+		<h1 class="horizontal-middle">Herramienta de administración</h1>
+	</header>
+  <section id="login">
+    <%= yield %>
+  </section>
+</body>
+</html>
