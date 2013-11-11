@@ -1,9 +1,14 @@
 var entry;
 var once = false;
+var isChrome = false;
 
 $(document).on("ready", onReady);
 
 function onReady() {
+
+  if (navigator.userAgent.indexOf("Chrome") != -1)
+    isChrome = true;
+
   window.addEventListener("message", function(event) {
     if (event.data == 'recordingComplete') {
       recordingComplete();
@@ -86,6 +91,8 @@ function recordEntry() {
     success: function(data, textStatus, jqXHR) {
       $("#section-fan").fadeOut(function() {
           $(this).html(data).slideDown();
+          if (isChrome)
+            $("#chrome-warning").css("display", "block");
           initMailVU();
         });   
     },
