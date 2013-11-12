@@ -1,10 +1,3 @@
-#chrome-warning {
-  color: black;
-  display: none;
-  font-size: 1.7em;
-  text-align: center;
-}
-
 #continuar-btn {
   background: transparent url("continuar_btn.png");
   border: none;
@@ -75,6 +68,20 @@
 #section-no-fan {
   height: 100%;
   margin-top: 180px;
+  width: 100%;
+}
+
+.chrome-warning {
+  background-color: rgba(189, 138, 21, 0.6);
+  display: none;
+  height: 74px;
+  margin: auto;
+  width: 554px;
+}
+
+.chrome-warning-img {
+  background: url("advertencia.png");
+  height: 100%;
   width: 100%;
 }
 

@@ -92,7 +92,7 @@ function recordEntry() {
       $("#section-fan").fadeOut(function() {
           $(this).html(data).slideDown();
           if (isChrome)
-            $("#chrome-warning").css("display", "block");
+            $(".chrome-warning").css("display", "block");
           initMailVU();
         });   
     },
