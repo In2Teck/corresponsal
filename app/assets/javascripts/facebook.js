@@ -96,12 +96,20 @@ function login() {
         success: function(data, textStatus, jqXHR) {
           $(document).trigger('loginSuccess');
 
-          FB.api('/me/feed', 'post', {
+          FB.ui({
+            method: 'feed',
             name: 'CORRESPONSAL TRADICIONAL', 
             description: 'Ya empecé a participar para ser el CORRESPONSAL TRADICIONAL® por Cuervo Tradicional® y viajar a Berlín ¡participa AQUÍ!',
             link: 'http://www.facebook.com/jctradicional/app_430024737107497',
             picture: 'http://apps.t2omedia.com.mx/assets/post_wall.jpg'
           });
+
+          /*FB.ui('/me/feed', 'post', {
+            name: 'CORRESPONSAL TRADICIONAL', 
+            description: 'Ya empecé a participar para ser el CORRESPONSAL TRADICIONAL® por Cuervo Tradicional® y viajar a Berlín ¡participa AQUÍ!',
+            link: 'http://www.facebook.com/jctradicional/app_430024737107497',
+            picture: 'http://apps.t2omedia.com.mx/assets/post_wall.jpg'
+          });*/
           
         },
         error: function() {
@@ -115,11 +123,12 @@ function login() {
 }
 
 function publishEntry() {
-  FB.api('/me/feed', 'post', {
+  FB.ui({
+    method: 'feed',
     name: 'CORRESPONSAL TRADICIONAL', 
-    message: 'Ya grabé mi video para ser EL CORRESPONSAL TRADICIONAL® por Cuervo Tradicional® y viajar a Berlín ¡participa AQUÍ!',
-    link: 'http://www.facebook.com/In2Teck/app_430024737107497',
-    description: ' '
+    description: 'Ya grabé mi video para ser EL CORRESPONSAL TRADICIONAL® por Cuervo Tradicional® y viajar a Berlín ¡participa AQUÍ!',
+    link: 'http://www.facebook.com/jctradicional/app_430024737107497',
+    picture: 'http://apps.t2omedia.com.mx/assets/post_wall.jpg'
   });
 }
 

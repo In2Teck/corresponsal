@@ -122,6 +122,7 @@ function playbackComplete() {
     success: function(data, textStatus, jqXHR) {
       $(".content").fadeOut(function() {
         $(this).replaceWith(data).fadeIn();
+        publishEntry();
       });
     },
     error: function() {
