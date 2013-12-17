@@ -24,6 +24,7 @@ function onReady() {
   
   if ($("#ruby-values").data("is-fan")) {
     $("#section-no-fan").css({display: "none"});
+    $("#youtubeV").attr('src', "https://www.youtube.com/embed/pQ7fr310W-w?autoplay=1&rel=0");
     $("#section-fan").css({display: "block"});
   }
   else {
