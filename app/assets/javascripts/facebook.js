@@ -61,7 +61,7 @@ function loadFB() {
             type: "GET",
             url: "/users/auth/facebook/callback?signed_request=" + $('#ruby-values').data("signed-request"),
             success: function(data, textStatus, jqXHR) {
-              $(document).trigger('fbLoaded');   
+              $(document).trigger('updateData', data);   
             },
             error: function() {
             } 

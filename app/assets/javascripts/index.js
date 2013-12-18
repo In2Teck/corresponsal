@@ -19,6 +19,7 @@ function onReady() {
   });
 
   $(document).on("loginReq", onLoginReq);
+  $(document).on("updateData", onUpdateData);
   $(document).on("fbLoaded", onFBLoaded);
   $(document).on("loginSuccess", onParticipar);
   
@@ -31,6 +32,15 @@ function onReady() {
     $("#section-no-fan").css({display: "block"});
     $("#section-fan").css({display: "none"});
   }
+}
+
+function onUpdateData(event, values) {
+  $("#ruby-values").append(values);
+  var attributes = $("#ruby-values div").prop("attributes");
+  $.each(attributes, function() {
+    $("#ruby-values").attr(this.name, this.value);
+  });
+  $(document).trigger('fbLoaded');
 }
 
 function onLoginReq() {
@@ -50,6 +60,7 @@ function onParticipar() {
   $.ajax({
     type: "GET",
     url: "/new_entry",
+    data: {"user_uid" : $("#ruby_user").data("userUid")},
     data_type: "html",
     success: function(data, textStatus, jqXHR) {
       $("#section-fan").fadeOut(function() {
@@ -135,6 +146,7 @@ function otroTicket() {
    $.ajax({
     type: "GET",
     url: "/new_entry",
+    data: {"user_uid" : $("#ruby_user").data("userUid")},
     data_type: "html",
     success: function(data, textStatus, jqXHR) {
       $("#section-fan").fadeOut(function() {

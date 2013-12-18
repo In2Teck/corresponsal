@@ -11,6 +11,9 @@ class DisplayController < ApplicationController
 	end
 
   def new_entry
+    unless current_user 
+      sign_in User.find_by_uid(params[:user_uid])
+    end
     @entry = Entry.new
     render :partial => 'new_entry', :content_type => 'text/html'
   end
